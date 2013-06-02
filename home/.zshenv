@@ -1,1 +1,7 @@
 DEBIAN_PREVENT_KEYBOARD_CHANGES=yes
+#GOROOT=$HOME/.golang
+#GOPATH=$GOROOT/bin
+PATH=/root/scripts:$PATH
+TERM=xterm-256color
+MANPAGER="/usr/bin/most -s"
+MOZ_DISABLE_PANGO=1

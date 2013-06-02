@@ -53,7 +53,3 @@ function calc
 set COMPLETE_ALIASES
 . ~/.zsh_aliases
 
-export PATH=/root/scripts:$PATH
-export TERM=xterm-256color
-export MANPAGER="/usr/bin/most -s"
-export MOZ_DISABLE_PANGO=1

@@ -53,3 +53,9 @@ function calc
 set COMPLETE_ALIASES
 . ~/.zsh_aliases
 
+export GOPATH=$HOME/golang
+export GOBIN=$GOPATH/bin
+export PATH=/root/scripts:$GOBIN:$PATH
+export TERM=xterm-256color
+export MANPAGER="/usr/bin/most -s"
+export MOZ_DISABLE_PANGO=1

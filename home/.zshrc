@@ -53,9 +53,11 @@ function calc
 set COMPLETE_ALIASES
 . ~/.zsh_aliases
 
+
+export ECLIPSE_HOME=$HOME/eclipse/eclipse
 export GOPATH=$HOME/golang
 export GOBIN=$GOPATH/bin
-export PATH=/root/scripts:$GOBIN:$PATH
+export PATH=/root/scripts:$GOBIN:$ECLIPSE_HOME:$PATH
 export TERM=xterm-256color
 export MANPAGER="/usr/bin/most -s"
 export MOZ_DISABLE_PANGO=1

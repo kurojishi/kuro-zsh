@@ -34,8 +34,8 @@ export DISABLE_AUTO_UPDATE="true"
 # Customize to your needs...
 zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*:*:vi(m|):*' ignored-patterns '*.o' 
-zstyle ':completion:*:*:git:*' ignored-patterns '*.o' 
+zstyle ':completion:*:*:vi(m|):*' ignored-patterns '*.o|*.pyc' 
+zstyle ':completion:*:*:git:*' ignored-patterns '*.o|*.pyc' 
 autoload -Uz compinit
 
 # caching
@@ -49,6 +49,7 @@ function calc
 {
     echo "$*"|bc -l;
 }
+
 
 set COMPLETE_ALIASES
 . ~/.zsh_aliases

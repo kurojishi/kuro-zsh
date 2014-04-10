@@ -24,7 +24,7 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github history-substring-search pip python extract gnu-utils perl svn mercurial rsync terminator virtualenv vundle wakeonlan)
+plugins=(git github gitignore git-prompt pip pyenv pylint python extract gnu-utils perl svn mercurial rsync terminator virtualenv vundle wakeonlan history-substring-search)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -35,6 +35,7 @@ export DISABLE_AUTO_UPDATE="true"
 zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*' accept-exact '*(N)'
 zstyle ':completion:*:*:vi(m|):*' ignored-patterns '*.o' 
+zstyle ':completion:*:*:vi(m|):*' ignored-patterns '*.test' 
 zstyle ':completion:*:*:git:*' ignored-patterns '*.o' 
 autoload -Uz compinit
 
@@ -53,9 +54,15 @@ function calc
 set COMPLETE_ALIASES
 . ~/.zsh_aliases
 
+
+#export ECLIPSE_HOME=$HOME/eclipse/eclipse
 export GOPATH=$HOME/golang
 export GOBIN=$GOPATH/bin
-export PATH=/root/scripts:$GOBIN:$PATH
+export PATH=/root/scripts:$GOBIN:$ECLIPSE_HOME:$PATH
 export TERM=xterm-256color
 export MANPAGER="/usr/bin/most -s"
 export MOZ_DISABLE_PANGO=1
+
+bindkey "$terminfo[kcuu1]" history-substring-search-up
+bindkey "$terminfo[kcud1]" history-substring-search-down
+

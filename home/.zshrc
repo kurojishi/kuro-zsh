@@ -5,7 +5,7 @@ ZSH=$HOME/.oh-my-zsh
 # Look in ~/.oh-my-zsh/themes/
 # Optionally, if you set this to "random", it'll load a random theme each
 # time that oh-my-zsh is loaded.
-export ZSH_THEME="kurojishi"
+export ZSH_THEME="pygmalion"
 
 # Set to this to use case-sensitive completion
 CASE_SENSITIVE="true"
@@ -24,7 +24,7 @@ DISABLE_AUTO_UPDATE="true"
 
 # Which plugins would you like to load? (plugins can be found in ~/.oh-my-zsh/plugins/*)
 # Example format: plugins=(rails git textmate ruby lighthouse)
-plugins=(git github gitignore git-prompt pip pyenv pylint python extract gnu-utils perl svn mercurial rsync terminator virtualenv vundle wakeonlan history-substring-search)
+plugins=(git gitignore git-prompt pyenv python extract gnu-utils svn mercurial rsync terminator virtualenv history-substring-search golang)
 
 source $ZSH/oh-my-zsh.sh
 
@@ -34,8 +34,7 @@ export DISABLE_AUTO_UPDATE="true"
 # Customize to your needs...
 zstyle :compinstall filename '~/.zshrc'
 zstyle ':completion:*' accept-exact '*(N)'
-zstyle ':completion:*:*:vi(m|):*' ignored-patterns '*.o' 
-zstyle ':completion:*:*:vi(m|):*' ignored-patterns '*.test' 
+zstyle ':completion:*:*:vi(m|):*' ignored-patterns '*.o|*.pyc|*.test|*.lo' 
 zstyle ':completion:*:*:git:*' ignored-patterns '*.o' 
 autoload -Uz compinit
 
@@ -51,6 +50,7 @@ function calc
     echo "$*"|bc -l;
 }
 
+
 set COMPLETE_ALIASES
 . ~/.zsh_aliases
 
@@ -62,6 +62,7 @@ export PATH=/root/scripts:$GOBIN:$ECLIPSE_HOME:$PATH
 export TERM=xterm-256color
 export MANPAGER="/usr/bin/most -s"
 export MOZ_DISABLE_PANGO=1
+
 
 bindkey "$terminfo[kcuu1]" history-substring-search-up
 bindkey "$terminfo[kcud1]" history-substring-search-down
